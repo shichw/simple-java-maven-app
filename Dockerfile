@@ -8,7 +8,7 @@ ADD ./src src/
 # package jar
 RUN mvn clean package
 # Second stage: minimal runtime environment
-From registry.redhat.io/openjdk/openjdk-8-rhel8:1.2
+FROM registry.redhat.io/openjdk/openjdk-8-rhel8:1.2
 # copy jar from the first stage
 COPY --from=builder target/my-app-1.0-SNAPSHOT.jar my-app-1.0-SNAPSHOT.jar
 

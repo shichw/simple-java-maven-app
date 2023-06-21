@@ -7,7 +7,7 @@ ADD ./pom.xml pom.xml
 ADD ./src src/
 
 # package jar
-RUN mvn clean package  -Dmaven.repo.local=/local-maven-repo
+RUN mvn clean package  -DskipTests
 # Second stage: minimal runtime environment
 FROM quay.io/zenlab/openjdk:8-slim
 # copy jar from the first stage

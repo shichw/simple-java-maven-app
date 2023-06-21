@@ -1,6 +1,7 @@
 # First stage: complete build environment
 FROM quay.io/openshift/origin-jenkins-agent-maven:4.9.0 AS builder
 
+USER root
 # add pom.xml and source code
 ADD ./pom.xml pom.xml
 ADD ./src src/
